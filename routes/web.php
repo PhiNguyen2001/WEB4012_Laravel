@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/admin/users', function () {
     $ListUser = DB::table('users')->get();
-    return view('admin/users/index');
+    return view('admin/users/index', ['data' => $ListUser, ]);
 });
 Route::get('/categories', function(){
     $ListCate = DB::table('categories')->get();
@@ -33,8 +33,11 @@ Route::get('/products', function(){
 Route::post('/admin/users', function(){
     dd($_REQUEST);
 });
+Route::view('/admin/users/create', 'admin/users/create');
 //view: trả ra view tương ứng với url
 Route::view('/welcome', 'welcome');
+
+
 
 /*
 - mathch : mapping url với callback tương ứng, mapping theo nhiều phương thức http đã khai báo

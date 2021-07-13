@@ -20,10 +20,10 @@ class ProdSeeder extends Seeder
         for($i = 0; $i < 20; $i++){
             $data = [
                 'name' => $faker->name,
-                'price' => $faker->randomNumber(1,10),
+                'price' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
                 'quantity' => $faker->randomNumber(1,1000),
                 'category_id' => $faker->randomNumber(1,25),
-                'image' => $faker -> image,
+                'image' => $faker -> imageUrl($width = 640, $height = 480),
             ];
 
             DB::table('products')->insert($data);
