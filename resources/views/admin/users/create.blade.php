@@ -2,7 +2,8 @@
 
 @section('title', 'Create User')
 @section('contents')
-<form method="POST" action="/admin/users">
+<h1>Thêm tài khoản</h1>
+<form method="POST" action="{{ route('admin.users.store')}}">
     <div>
         <label>Name</label>
         <input class="mt-3 form-control" type="text" name="name" />
@@ -25,8 +26,8 @@
     <div>
         <label>Role</label>
         <select class="mt-3 form-control" name="role">
-            <option value="0">User</option>
-            <option value="1">Admin</option>
+            <option value="1">User</option>
+            <option value="2">Admin</option>
         </select>
     </div>
 
